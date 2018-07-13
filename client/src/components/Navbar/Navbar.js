@@ -1,4 +1,5 @@
 import React from "react";
+import history from "../../history";
 import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
 
 class NavExample extends React.Component {
@@ -16,6 +17,7 @@ class NavExample extends React.Component {
         collapsed: !this.state.collapsed
       });
     }
+
     render() {
       return (
         <div>
@@ -25,25 +27,13 @@ class NavExample extends React.Component {
             <Collapse isOpen={!this.state.collapsed} navbar>
               <Nav navbar>
                 <NavItem>
-                  <NavLink href="/components/">Components</NavLink>
+                  <NavLink onClick= {()=>history.replace("/home")}>Home</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
+                  <NavLink onClick= {()=>history.replace("/quizzes")}>View Quizzes</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink href="/">Home</NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink href="/login">Log In</NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink href="/newuser">Sign Up</NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink href="/quizzes">View Quizzes</NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink href="/newquiz">Create A quiz</NavLink>
+                  <NavLink onClick= {()=>history.replace("/newquiz")}>Create a Quiz</NavLink>
                 </NavItem>
               </Nav>
             </Collapse>
