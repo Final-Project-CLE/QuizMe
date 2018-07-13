@@ -1,41 +1,44 @@
-import React, { Component } from 'react';
-import QuizBox from "../../components/QuizBox/QuizBox";
-import data from "../../data.json";
-import Container from "../../components/Container/Container";
-import axios from "axios";
+import React from 'react';
+import { Route, Router } from 'react-router-dom';
+import App from './App';
+import Home from './pages/Home/Home';
+import Callback from './Callback/Callback';
+import Auth from './Auth/Auth';
+import history from './history';
+import Quizzes from './pages/Quizzes'
+import NavExample from './components/Navbar/Navbar';
+import NewQuiz from './pages/NewQuiz';
 
+const auth = new Auth();
 
-class Quizzes extends Component {
-  state = {
-    data
-  }
-
-  componentDidMount(){
-    axios.get('/routeName').then(res =>{
-      console.log(res);
-    }).catch(err => {
-      console.log(err);
-    })
-  }
-
-  render() {
-    return (
-      <div>
-        <Container>
-          <div className="row">
-            {this.state.data.map(item => (
-              <QuizBox
-                key={item.id}
-                id={item.id}
-                quizTitle={item.quizTitle}
-              />
-            ))}
-          </div>
-        </Container>        
-
-      </div>
-    );
+const handleAuthentication = ({location}) => {
+  if (/access_token|id_token|error/.test(location.hash)) {
+    auth.handleAuthentication();
   }
 }
 
-export default Quizzes;
+export const makeMainRoutes = () => {
+  return (
+      <Router history={history}>
+        <div>
+        {auth.isAuthenticated ? <NavExample/> : null}
+          <Route path="/" render={(props) => <App auth={auth} {...props} />} />
+          <Route path="/home" render={(props) => <Home auth={auth} {...props} />} />
+          <Route path="/quizzes" render={(props) => <Quizzes auth={auth} {...props} />} />
+          <Route path="/newquiz" render={(props) => <NewQuiz auth={auth} {...props} />} />
+          <Route path="/callback" render={(props) => {
+            handleAuthentication(props);
+            return <Callback {...props} /> 
+          }}/>
+        </div>
+      </Router>
+  );
+}
+
+// Old routes from Page.js
+{/* <Route exact path="/" component={Home} />
+<Route exact path="/login" component={Login} />
+<Route exact path="/newuser" component={NewUser} />
+<Route exact path="/quizzes" component={Quizzes} />
+<Route exact path="/newquiz" component={NewQuiz} />
+<Route exact path="/:id" component={QuizPage} /> */}
