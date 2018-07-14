@@ -3,7 +3,6 @@ import axios from "axios";
 export default {
   // Gets all quizzes
   getQuizzes: function () {
-    console.log('I am a thing!')
     return axios.get("/api/quiz");
   },
   // Gets the book with the given id
