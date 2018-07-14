@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Jumbotron from '../../components/Jumbotron/Jumbotron';
+import Quizzes from '../../pages/Quizzes/Quizzes'
 
 class Home extends Component {
   state = {
@@ -11,6 +12,7 @@ class Home extends Component {
       <div>
         <Jumbotron />
         <p>Home Page</p>
+        <Quizzes />
       </div>
     );
   }

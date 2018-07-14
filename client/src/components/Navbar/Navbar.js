@@ -1,6 +1,6 @@
 import React from "react";
 import history from "../../history";
-import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink, Button } from 'reactstrap';
+import { Collapse, Navbar, NavbarToggler, Nav, NavItem, NavLink, Button } from 'reactstrap';
 import './Navbar.css'
 
 class NavExample extends React.Component {
@@ -35,7 +35,7 @@ class NavExample extends React.Component {
     const { isAuthenticated } = this.props.auth;
     return (
       <div>
-          <Navbar color="faded" light>
+          <Navbar color="blue" light>
           {
               !isAuthenticated() && (
                 <Button
@@ -60,12 +60,11 @@ class NavExample extends React.Component {
                   </Button>
               )
             }
-          <NavbarBrand href="/" className="mr-auto">QuizMe</NavbarBrand>
           <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
           <Collapse isOpen={!this.state.collapsed} navbar>
             <Nav navbar>
               <NavItem>
-                <NavLink onClick={() => history.replace("/home")}>Home</NavLink>
+                <NavLink onClick={() => history.replace("/")}>Home</NavLink>
               </NavItem>
               <NavItem>
                 <NavLink onClick={() => history.replace("/quizzes")}>View Quizzes</NavLink>
