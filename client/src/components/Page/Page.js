@@ -14,7 +14,7 @@ class Page extends Component {
     return (
     <Router>
       <div>
-        
+
         <Jumbotron />
             <Switch>
             <Route exact path="/" component={Home} />
