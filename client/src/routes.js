@@ -8,6 +8,7 @@ import history from './history';
 import Quizzes from './pages/Quizzes'
 import NavExample from './components/Navbar/Navbar';
 import NewQuiz from './pages/NewQuiz';
+import QuizPage from "./pages/Quiz/QuizPage";
 
 const auth = new Auth();
 
@@ -25,7 +26,9 @@ export const makeMainRoutes = () => {
           <Route exact path="/" render={(props) => <App auth={auth} {...props} />} />
           <Route path="/home" render={(props) => <Home auth={auth} {...props} />} />
           <Route path="/quizzes" render={(props) => <Quizzes auth={auth} {...props} />} />
+          <Route path="/quiz/:id" render={(props) => <QuizPage auth={auth} {...props} />} />
           <Route path="/newquiz" render={(props) => <NewQuiz auth={auth} {...props} />} />
+
           <Route path="/callback" render={(props) => {
             handleAuthentication(props);
             return <Callback {...props} /> 

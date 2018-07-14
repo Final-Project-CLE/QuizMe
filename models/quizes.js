@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const quizesSchema = new Schema({
-    // quizNumber: {
+    
     quizTitle: { type: String, required: true },
     author: {type: String, required: true},
     q1: {
@@ -69,7 +69,7 @@ const quizesSchema = new Schema({
             }
         }
     },
-    // }
+
 })
 
 const Quizes = mongoose.model("Quizes", quizesSchema);
