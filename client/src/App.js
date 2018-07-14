@@ -1,68 +1,44 @@
 import React, { Component } from 'react';
-import { Navbar, Button } from 'react-bootstrap';
-import Jumbotron from './components/Jumbotron/Jumbotron';
-import Quizzes from './pages/Quizzes/Quizzes';
+import { Route, Router } from 'react-router-dom';
+import Home from './pages/Home/Home';
+import Callback from './Callback/Callback';
+import Auth from './Auth/Auth';
+import history from './history';
+import Quizzes from './pages/Quizzes'
+import NavExample from './components/Navbar/Navbar';
+import NewQuiz from './pages/NewQuiz';
+import QuizPage from "./pages/Quiz/QuizPage";
+
+const auth = new Auth();
+
+const handleAuthentication = ({location}) => {
+  if (/access_token|id_token|error/.test(location.hash)) {
+    auth.handleAuthentication();
+  }
+}
 
 class App extends Component {
-  goTo(route) {
-    this.props.history.replace(`/${route}`)
-  }
-
-  login() {
-    this.props.auth.login();
-  }
-
-  logout() {
-    this.props.auth.logout();
-  }
 
   render() {
-    const { isAuthenticated } = this.props.auth;
-    console.log(isAuthenticated());
     return (
       <div>
-        <Navbar fluid>
-          <Navbar.Header>
-            <Navbar.Brand>
-            </Navbar.Brand>
-            {/* <Button
-              bsStyle="primary"
-              className="btn-margin"
-              onClick={this.goTo.bind(this, 'home')}
-            >
-              Home
-            </Button> */}
-            {
-              !isAuthenticated() && (
-                <Button
-                  id="qsLoginBtn"
-                  bsStyle="primary"
-                  className="btn-margin"
-                  onClick={this.login.bind(this)}
-                >
-                  Log In
-                  </Button>
-              )
-            }
-            {
-              isAuthenticated() && (
-                <Button
-                  id="qsLogoutBtn"
-                  bsStyle="primary"
-                  className="btn-margin"
-                  onClick={this.logout.bind(this)}
-                >
-                  Log Out
-                  </Button>
-              )
-            }
-          </Navbar.Header>
-        </Navbar>
-        <Jumbotron />
-        <Quizzes />
+        {auth.isAuthenticated ? <NavExample auth={auth} /> : null}
+        <Router history={history}>
+          <div>
+            <Route exact path="/" render={(props) => <Home auth={auth} {...props} />} />
+            <Route path="/quizzes" render={(props) => <Quizzes auth={auth} {...props} />} />
+            <Route path="/quiz/:id" render={(props) => <QuizPage auth={auth} {...props} />} />
+            <Route path="/newquiz" render={(props) => <NewQuiz auth={auth} {...props} />} />
+
+            <Route path="/callback" render={(props) => {
+              handleAuthentication(props);
+              return <Callback {...props} /> 
+            }}/>
+          </div>
+        </Router>
       </div>
         );
       }
     }
     
-    export default App;
+export default App;

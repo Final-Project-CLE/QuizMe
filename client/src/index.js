@@ -1,10 +1,9 @@
 import ReactDOM from 'react-dom';
+import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
-import { makeMainRoutes } from './routes';
-
-const routes = makeMainRoutes();
+import App from './App';
 
 ReactDOM.render(
-  routes,
+  <App />,
   document.getElementById('root')
 );
