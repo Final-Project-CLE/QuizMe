@@ -1,17 +1,16 @@
 import React, { Component } from 'react';
 import QuizBox from "../../components/QuizBox/QuizBox";
-import data from "../../data.json";
+import QuizAPI from "../../utils/QuizAPI"
 import Container from "../../components/Container/Container";
-import axios from "axios";
-
 
 class Quizzes extends Component {
   state = {
-    quizzes
+    quizzes:[]
   }
 
   componentDidMount() {
     this.loadQuizzes();
+    console.log(this.state.quizzes)
        
   };
 
@@ -20,6 +19,7 @@ class Quizzes extends Component {
     .then(res =>
       this.setState({ 
         quizzes: res.data})
+        
     )
     .catch(err => console.log(err))    
   }
@@ -29,13 +29,13 @@ class Quizzes extends Component {
       <div>
         <Container>
           <div className="row">
-            {this.state.data.map(item => (
+            {/* {this.state.data.map(item => (
               <QuizBox
                 key={item._id}
                 id={item._id}
                 quizTitle={item.quizTitle}
               />
-            ))}
+            ))} */}
           </div>
         </Container>        
 
