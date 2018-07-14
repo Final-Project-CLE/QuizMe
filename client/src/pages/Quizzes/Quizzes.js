@@ -16,10 +16,9 @@ class Quizzes extends Component {
 
   loadQuizzes() {
     QuizAPI.getQuizzes()
-    .then(res =>
-      this.setState({ 
-        quizzes: res.data})
-        
+    .then(res =>{
+      this.setState({quizzes: res.data})
+    }        
     )
     .catch(err => console.log(err))    
   }
