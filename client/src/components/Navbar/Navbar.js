@@ -25,20 +25,9 @@ class NavExample extends React.Component {
             <Collapse isOpen={!this.state.collapsed} navbar>
               <Nav navbar>
                 <NavItem>
-                  <NavLink href="/components/">Components</NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
-                </NavItem>
-                <NavItem>
                   <NavLink href="/">Home</NavLink>
                 </NavItem>
-                <NavItem>
-                  <NavLink href="/login">Log In</NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink href="/newuser">Sign Up</NavLink>
-                </NavItem>
+
                 <NavItem>
                   <NavLink href="/quizzes">View Quizzes</NavLink>
                 </NavItem>

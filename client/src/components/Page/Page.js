@@ -7,14 +7,14 @@ import NewUser from "../../pages/NewUser";
 import Home from "../../pages/Home/Home";
 import NewQuiz from "../../pages/NewQuiz/newQuiz";
 import Quiz from "../../pages/Quiz/Quiz";
-
+import Navbar from "../Navbar/Navbar";
 
 class Page extends Component {
   render() {
     return (
     <Router>
       <div>
-
+        <Navbar />
         <Jumbotron />
             <Switch>
             <Route exact path="/" component={Home} />
