@@ -5,9 +5,9 @@ import {
     Container, Row, Col
 } from 'reactstrap';
 
-const theStyle = {
-    "fontSize": "13px"
-}
+import "./Quiz.css"
+
+
 
 
 const Quiz = props => (
@@ -23,28 +23,28 @@ const Quiz = props => (
                                     <CardSubtitle>{props.Q1}</CardSubtitle>
                                     
                                         <ButtonGroup className="btn-group-justified">
-                                            <Button style={theStyle} value={props.correctQ1A1}>{props.Q1A1}</Button>
-                                            <Button style={theStyle} value={props.correctQ1A2}>{props.Q1A2}</Button>
-                                            <Button style={theStyle} value={props.correctQ1A3}>{props.Q1A3}</Button>
-                                            <Button style={theStyle} value={props.correctQ1A4}>{props.Q1A4}</Button>
+                                            <Button  value={props.correctQ1A1}>{props.Q1A1}</Button>
+                                            <Button  value={props.correctQ1A2}>{props.Q1A2}</Button>
+                                            <Button  value={props.correctQ1A3}>{props.Q1A3}</Button>
+                                            <Button  value={props.correctQ1A4}>{props.Q1A4}</Button>
                                         </ButtonGroup>
                                     
                                     <CardSubtitle>{props.Q2}</CardSubtitle>
                                     
-                                        <ButtonGroup style={theStyle}>
-                                            <Button style={theStyle} value={props.correctQ2A1}>{props.Q2A1}</Button>
-                                            <Button style={theStyle} value={props.correctQ2A2}>{props.Q2A2}</Button>
-                                            <Button style={theStyle} value={props.correctQ2A3}>{props.Q2A3}</Button>
-                                            <Button style={theStyle} value={props.correctQ2A4}>{props.Q2A4}</Button>
+                                        <ButtonGroup >
+                                            <Button  value={props.correctQ2A1}>{props.Q2A1}</Button>
+                                            <Button  value={props.correctQ2A2}>{props.Q2A2}</Button>
+                                            <Button  value={props.correctQ2A3}>{props.Q2A3}</Button>
+                                            <Button  value={props.correctQ2A4}>{props.Q2A4}</Button>
                                         </ButtonGroup>
                                     
                                     <CardSubtitle>{props.Q3}</CardSubtitle>
                                    
-                                        <ButtonGroup style={theStyle}>
-                                            <Button style={theStyle} value={props.correctQ3A1}>{props.Q3A1}</Button>
-                                            <Button style={theStyle} value={props.correctQ3A2}>{props.Q3A2}</Button>
-                                            <Button style={theStyle} value={props.correctQ3A3}>{props.Q3A3}</Button>
-                                            <Button style={theStyle} value={props.correctQ3A4}>{props.Q3A4}</Button>
+                                        <ButtonGroup >
+                                            <Button  value={props.correctQ3A1}>{props.Q3A1}</Button>
+                                            <Button  value={props.correctQ3A2}>{props.Q3A2}</Button>
+                                            <Button  value={props.correctQ3A3}>{props.Q3A3}</Button>
+                                            <Button  value={props.correctQ3A4}>{props.Q3A4}</Button>
                                         </ButtonGroup>
                                     
                                 </CardBody>
