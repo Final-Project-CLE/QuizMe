@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Jumbotron from '../../components/Jumbotron/Jumbotron'
+import Jumbotron from '../../components/Jumbotron/Jumbotron';
 
 class Home extends Component {
   state = {
@@ -9,7 +9,6 @@ class Home extends Component {
   render() {
     return (
       <div>
-        {/* Right now I have it making you login to view the home page  */}
         <Jumbotron />
         <p>Home Page</p>
       </div>

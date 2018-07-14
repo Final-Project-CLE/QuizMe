@@ -1,6 +1,7 @@
 import React from "react";
 import history from "../../history";
 import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
+import './Navbar.css'
 
 class NavExample extends React.Component {
     constructor(props) {
