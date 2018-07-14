@@ -7,10 +7,9 @@ import axios from "axios";
 
 class Quizzes extends Component {
   state = {
-    data
+    quizzes
   }
 
-<<<<<<< HEAD
   componentDidMount() {
     this.loadQuizzes();
        
@@ -23,14 +22,6 @@ class Quizzes extends Component {
         quizzes: res.data})
     )
     .catch(err => console.log(err))    
-=======
-  componentDidMount(){
-    axios.get('/routeName').then(res =>{
-      console.log(res);
-    }).catch(err => {
-      console.log(err);
-    })
->>>>>>> 785d12760bb0832cc6c063599b1c50aee9600b01
   }
 
   render() {
@@ -40,13 +31,8 @@ class Quizzes extends Component {
           <div className="row">
             {this.state.data.map(item => (
               <QuizBox
-<<<<<<< HEAD
                 key={item._id}
                 id={item._id}
-=======
-                key={item.id}
-                id={item.id}
->>>>>>> 785d12760bb0832cc6c063599b1c50aee9600b01
                 quizTitle={item.quizTitle}
               />
             ))}
