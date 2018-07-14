@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
 import QuizBox from "../../components/QuizBox/QuizBox";
-// import data from "../../data.json";
+import data from "../../data.json";
 import Container from "../../components/Container/Container";
-import QuizAPI from "../../utils/QuizAPI";
+import axios from "axios";
 
 
 class Quizzes extends Component {
   state = {
-    quizzes: []
+    data
   }
 
+<<<<<<< HEAD
   componentDidMount() {
     this.loadQuizzes();
        
@@ -22,6 +23,14 @@ class Quizzes extends Component {
         quizzes: res.data})
     )
     .catch(err => console.log(err))    
+=======
+  componentDidMount(){
+    axios.get('/routeName').then(res =>{
+      console.log(res);
+    }).catch(err => {
+      console.log(err);
+    })
+>>>>>>> 785d12760bb0832cc6c063599b1c50aee9600b01
   }
 
   render() {
@@ -29,10 +38,15 @@ class Quizzes extends Component {
       <div>
         <Container>
           <div className="row">
-            {this.state.quizzes.map(item => (
+            {this.state.data.map(item => (
               <QuizBox
+<<<<<<< HEAD
                 key={item._id}
                 id={item._id}
+=======
+                key={item.id}
+                id={item.id}
+>>>>>>> 785d12760bb0832cc6c063599b1c50aee9600b01
                 quizTitle={item.quizTitle}
               />
             ))}

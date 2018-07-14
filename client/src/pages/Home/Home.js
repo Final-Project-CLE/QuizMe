@@ -1,24 +1,16 @@
 import React, { Component } from "react";
-
-import QuizAPI from "../../utils/QuizAPI";
-import { Link } from "react-router-dom";
-
-
-
+import Jumbotron from '../../components/Jumbotron/Jumbotron'
 
 class Home extends Component {
   state = {
     homes: [],
 
   };
-
-
-
-
-
   render() {
     return (
       <div>
+        {/* Right now I have it making you login to view the home page  */}
+        <Jumbotron />
         <p>Home Page</p>
       </div>
     );
