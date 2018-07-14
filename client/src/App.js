@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Navbar, Button } from 'react-bootstrap';
+import Jumbotron from './components/Jumbotron/Jumbotron';
+import Quizzes from './pages/Quizzes/Quizzes';
 
 class App extends Component {
   goTo(route) {
@@ -16,51 +18,51 @@ class App extends Component {
 
   render() {
     const { isAuthenticated } = this.props.auth;
-    console.log(isAuthenticated ());
+    console.log(isAuthenticated());
     return (
       <div>
         <Navbar fluid>
           <Navbar.Header>
             <Navbar.Brand>
-              <a href="#">QuizMe</a>
             </Navbar.Brand>
-            <Button
+            {/* <Button
               bsStyle="primary"
               className="btn-margin"
               onClick={this.goTo.bind(this, 'home')}
             >
               Home
-            </Button>
+            </Button> */}
             {
               !isAuthenticated() && (
-                  <Button
-                    id="qsLoginBtn"
-                    bsStyle="primary"
-                    className="btn-margin"
-                    onClick={this.login.bind(this)}
-                  >
-                    Log In
+                <Button
+                  id="qsLoginBtn"
+                  bsStyle="primary"
+                  className="btn-margin"
+                  onClick={this.login.bind(this)}
+                >
+                  Log In
                   </Button>
-                )
+              )
             }
             {
               isAuthenticated() && (
-                  <Button
-                    id="qsLogoutBtn"
-                    bsStyle="primary"
-                    className="btn-margin"
-                    onClick={this.logout.bind(this)}
-                  >
-                    Log Out
+                <Button
+                  id="qsLogoutBtn"
+                  bsStyle="primary"
+                  className="btn-margin"
+                  onClick={this.logout.bind(this)}
+                >
+                  Log Out
                   </Button>
-                )
+              )
             }
           </Navbar.Header>
         </Navbar>
-      
+        <Jumbotron />
+        <Quizzes />
       </div>
-    );
-  }
-}
-
-export default App;
+        );
+      }
+    }
+    
+    export default App;
