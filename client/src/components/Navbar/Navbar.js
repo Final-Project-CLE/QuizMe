@@ -35,6 +35,65 @@ class NavExample extends React.Component {
     const { isAuthenticated } = this.props.auth;
     return (
       <div>
+          <Navbar color="faded" light>
+          {
+              !isAuthenticated() && (
+                <Button
+                  id="qsLoginBtn"
+                  bsStyle="primary"
+                  className="btn-margin"
+                  onClick={this.login.bind(this)}
+                >
+                  Log In
+                  </Button>
+              )
+            }
+            {
+              isAuthenticated() && (
+                <Button
+                  id="qsLogoutBtn"
+                  bsStyle="primary"
+                  className="btn-margin"
+                  onClick={this.logout.bind(this)}
+                >
+                  Log Out
+                  </Button>
+              )
+            }
+          <NavbarBrand href="/" className="mr-auto">QuizMe</NavbarBrand>
+          <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
+          <Collapse isOpen={!this.state.collapsed} navbar>
+            <Nav navbar>
+              <NavItem>
+                <NavLink onClick={() => history.replace("/home")}>Home</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink onClick={() => history.replace("/quizzes")}>View Quizzes</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink onClick={() => history.replace("/newquiz")}>Create a Quiz</NavLink>
+              </NavItem>
+            </Nav>
+          </Collapse>
+        </Navbar>
+      </div>
+    );
+  }
+}
+
+  login() {
+    this.props.auth.login();
+  }
+
+  logout() {
+    this.props.auth.logout();
+  }
+
+
+  render() {
+    const { isAuthenticated } = this.props.auth;
+    return (
+      <div>
         <Navbar color="faded" light>
           {
             !isAuthenticated() && (
