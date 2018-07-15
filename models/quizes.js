@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const quizesSchema = new Schema({
-    // quizNumber: {
+    
     quizTitle: { type: String, required: true },
     author: {type: String, required: true},
     q1: {
@@ -10,19 +10,19 @@ const quizesSchema = new Schema({
         answers: {
             answer1: {
                 answer: { type: String, required: true },
-                correct: { type: Boolean, required: true }
+                correct: { type: String, required: true }
             },
             answer2: {
                 answer: { type: String, required: true },
-                correct: { type: Boolean, required: true }
+                correct: { type: String, required: true }
             },
             answer3: {
                 answer: { type: String, required: true },
-                correct: { type: Boolean, required: true }
+                correct: { type: String, required: true }
             },
             answer4: {
                 answer: { type: String, required: true },
-                correct: { type: Boolean, required: true }
+                correct: { type: String, required: true }
             }
         }
     },
@@ -31,19 +31,19 @@ const quizesSchema = new Schema({
         answers: {
             answer1: {
                 answer: { type: String, required: true },
-                correct: { type: Boolean, required: true }
+                correct: { type: String, required: true }
             },
             answer2: {
                 answer: { type: String, required: true },
-                correct: { type: Boolean, required: true }
+                correct: { type: String, required: true }
             },
             answer3: {
                 answer: { type: String, required: true },
-                correct: { type: Boolean, required: true }
+                correct: { type: String, required: true }
             },
             answer4: {
                 answer: { type: String, required: true },
-                correct: { type: Boolean, required: true }
+                correct: { type: String, required: true }
             }
         }
 
@@ -53,23 +53,23 @@ const quizesSchema = new Schema({
         answers: {
             answer1: {
                 answer: { type: String, required: true },
-                correct: { type: Boolean, required: true }
+                correct: { type: String, required: true }
             },
             answer2: {
                 answer: { type: String, required: true },
-                correct: { type: Boolean, required: true }
+                correct: { type: String, required: true }
             },
             answer3: {
                 answer: { type: String, required: true },
-                correct: { type: Boolean, required: true }
+                correct: { type: String, required: true }
             },
             answer4: {
                 answer: { type: String, required: true },
-                correct: { type: Boolean, required: true }
+                correct: { type: String, required: true }
             }
         }
     },
-    // }
+
 })
 
 const Quizes = mongoose.model("Quizes", quizesSchema);

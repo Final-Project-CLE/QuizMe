@@ -16,19 +16,19 @@ const quizSeed = [
             "answers": {
                 "answer1": {
                     "answer": "This is the first answer. It is wrong",
-                    "correct": false
+                    "correct": "false"
                 },
                 "answer2": {
                     "answer": "This is the second answer. It is wrong",
-                    "correct": false
+                    "correct": "false"
                 },
                 "answer3": {
                     "answer": "This is the third answer. It is wrong",
-                    "correct": false
+                    "correct": "false"
                 },
                 "answer4": {
                     "answer": "This is the fourth answer. It is right",
-                    "correct": true
+                    "correct": "true"
                 }
             }
         },
@@ -37,19 +37,19 @@ const quizSeed = [
             "answers": {
                 "answer1": {
                     "answer": "This is the first answer. It is wrong",
-                    "correct": false
+                    "correct": "false"
                 },
                 "answer2": {
                     "answer": "This is the second answer. It is right",
-                    "correct": true
+                    "correct": "true"
                 },
                 "answer3": {
                     "answer": "This is the third answer. It is wrong",
-                    "correct": false
+                    "correct": "false"
                 },
                 "answer4": {
                     "answer": "This is the fourth answer. It is wrong",
-                    "correct": false
+                    "correct": "false"
                 }
             }
         },
@@ -58,19 +58,19 @@ const quizSeed = [
             "answers": {
                 "answer1": {
                     "answer": "This is the first answer. It is right",
-                    "correct": true
+                    "correct": "true"
                 },
                 "answer2": {
                     "answer": "This is the second answer. It is wrong",
-                    "correct": false
+                    "correct": "false"
                 },
                 "answer3": {
                     "answer": "This is the third answer. It is wrong",
-                    "correct": false
+                    "correct": "false"
                 },
                 "answer4": {
                     "answer": "This is the fourth answer. It is wrong",
-                    "correct": false
+                    "correct": "false"
                 }
             }
         }
@@ -84,19 +84,19 @@ const quizSeed = [
             "answers": {
                 "answer1": {
                     "answer": "This is the first answer for q1. It is wrong",
-                    "correct": false
+                    "correct": "false"
                 },
                 "answer2": {
                     "answer": "This is the second answer for q1. It is wrong",
-                    "correct": false
+                    "correct": "false"
                 },
                 "answer3": {
                     "answer": "This is the third answer for q1. It is wrong",
-                    "correct": false
+                    "correct": "false"
                 },
                 "answer4": {
                     "answer": "This is the fourth answer for q1. It is right",
-                    "correct": true
+                    "correct": "true"
                 }
             }
         },
@@ -105,19 +105,19 @@ const quizSeed = [
             "answers": {
                 "answer1": {
                     "answer": "This is the first answer for q2. It is wrong",
-                    "correct": false
+                    "correct": "false"
                 },
                 "answer2": {
                     "answer": "This is the second answer for q2. It is right",
-                    "correct": true
+                    "correct": "true"
                 },
                 "answer3": {
                     "answer": "This is the third answer for q2. It is wrong",
-                    "correct": false
+                    "correct": "false"
                 },
                 "answer4": {
                     "answer": "This is the fourth answer for q2. It is wrong",
-                    "correct": false
+                    "correct": "false"
                 }
             }
         },
@@ -126,19 +126,19 @@ const quizSeed = [
             "answers": {
                 "answer1": {
                     "answer": "This is the first answer for q3. It is right",
-                    "correct": true
+                    "correct": "true"
                 },
                 "answer2": {
                     "answer": "This is the second answer for q3. It is wrong",
-                    "correct": false
+                    "correct": "false"
                 },
                 "answer3": {
                     "answer": "This is the third answer for q3. It is wrong",
-                    "correct": false
+                    "correct": "false"
                 },
                 "answer4": {
                     "answer": "This is the fourth answer for q3. It is wrong",
-                    "correct": false
+                    "correct": "false"
                 }
             }
         }
