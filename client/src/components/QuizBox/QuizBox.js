@@ -1,23 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./QuizBox.css"
 const style = {
-  margin: "10px"
+  margin: "100px"
 }
 
 const QuizBox = props => (
-
-  <div className="card col-4-md" style={style}>
-    <div className="card-body">
-      <Link to={"/quiz/" + props.id} >
-        {props.quizTitle}
-      </Link>
+  <body>
+    <div className="card col-4-md" id="quizbox" style={style}>
+        <div className="card-body">
+          <Link to={"/quiz/" + props.id} >
+            {props.quizTitle}
+          </Link>
+        </div>
     </div>
-  </div>
-
-
-
-
-
+  </body>
 )
 
 export default QuizBox;
