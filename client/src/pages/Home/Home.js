@@ -14,14 +14,14 @@ class Home extends Component {
   render() {
     return (
 
-      <body>
+    
         <div className="home">
           <Jumbotron />
           <div id="p1"><p>Home Page</p></div>
           <div id="p2"><p>Other Stuff Here</p></div>
           <Quizzes />
         </div>
-      </body>
+      
     );
   }
 }

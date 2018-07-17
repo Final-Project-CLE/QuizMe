@@ -42,7 +42,7 @@ class NavExample extends React.Component {
             !isAuthenticated() && (
               <Button
                 id="qsLoginBtn"
-                bsStyle="primary"
+                bsstyle="primary"
                 className="btn-margin"
                 onClick={this.login.bind(this)}
               >
