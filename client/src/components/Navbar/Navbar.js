@@ -34,43 +34,50 @@ class NavExample extends React.Component {
   render() {
     const { isAuthenticated } = this.props.auth;
     return (
-      <div>
-          <Navbar color="blue" light>
+
+      <div id="nav">
+        <Navbar color="faded" light>
+
           {
-              !isAuthenticated() && (
-                <Button
-                  id="qsLoginBtn"
-                  bsStyle="primary"
-                  className="btn-margin"
-                  onClick={this.login.bind(this)}
-                >
-                  Log In
+            !isAuthenticated() && (
+              <Button
+                id="qsLoginBtn"
+                bsStyle="primary"
+                className="btn-margin"
+                onClick={this.login.bind(this)}
+              >
+                Log In
                   </Button>
-              )
-            }
-            {
-              isAuthenticated() && (
-                <Button
-                  id="qsLogoutBtn"
-                  bsStyle="primary"
-                  className="btn-margin"
-                  onClick={this.logout.bind(this)}
-                >
-                  Log Out
+            )
+          }
+          {
+            isAuthenticated() && (
+              <Button
+                id="qsLogoutBtn"
+                bsStyle="primary"
+                className="btn-margin"
+                onClick={this.logout.bind(this)}
+              >
+                Log Out
                   </Button>
-              )
-            }
+
+            )
+          }
+          <NavbarBrand href="/" className="mr-auto"><p id="logo">QuizMe</p></NavbarBrand>
+
           <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
           <Collapse isOpen={!this.state.collapsed} navbar>
             <Nav navbar>
               <NavItem>
-                <NavLink onClick={() => history.replace("/")}>Home</NavLink>
+
+                <NavLink onClick={() => history.replace("/home")}><p id="link">Home</p></NavLink>
+
               </NavItem>
               <NavItem>
-                <NavLink onClick={() => history.replace("/quizzes")}>View Quizzes</NavLink>
+                <NavLink onClick={() => history.replace("/quizzes")}><p id="link">View Quizzes</p></NavLink>
               </NavItem>
               <NavItem>
-                <NavLink onClick={() => history.replace("/newquiz")}>Create a Quiz</NavLink>
+                <NavLink onClick={() => history.replace("/newquiz")}><p id="link">Create a Quiz</p></NavLink>
               </NavItem>
             </Nav>
           </Collapse>
@@ -78,6 +85,9 @@ class NavExample extends React.Component {
       </div>
     );
   }
+
+
+
 }
 
 export default NavExample;
