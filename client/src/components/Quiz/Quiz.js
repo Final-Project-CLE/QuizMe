@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import {
     Card, CardBody,
     CardTitle, CardSubtitle, Button, ButtonGroup,
@@ -7,66 +7,155 @@ import {
 
 import "./Quiz.css";
 
+class Quiz extends Component {
+    constructor(props) {
+        super(props);
 
-const Quiz = props => (
-    <body>
-        <div id="box">
-            <Container>
-                <Row>
-                    <Col>
-                            <Row>
-                                <Col>
-                                    <CardBody>
-                                        <CardTitle><p id="title">{props.quizTitle}</p></CardTitle>
-                                        <CardSubtitle><p id="subtitle">{props.Q1}</p></CardSubtitle>
+        this.state = {
+            rSelected1:"",
+            rSelected2:"",
+            rSelected3:""
+    }
 
-                                    <ButtonGroup id="btn-group">
-                                                <Button id="ansbtn" value={props.correctQ1A1}><p id="answer">{props.Q1A1}</p></Button><br></br>
-                                                <Button  id="ansbtn" value={props.correctQ1A2}><p id="answer">{props.Q1A2}</p></Button><br></br>
-                                                <Button id="ansbtn" value={props.correctQ1A3}><p id="answer">{props.Q1A3}</p></Button><br></br>
-                                                <Button id="ansbtn" value={props.correctQ1A4}><p id="answer">{props.Q1A4}</p></Button><br></br>
+        // this.onRadioBtnClick = this.onRadioBtnClick.bind(this);
+    }
+
+    onRadioBtnClick1(rSelected1) {
+        this.setState({ rSelected1 });
+    }
+    onRadioBtnClick2(rSelected2) {
+        this.setState({ rSelected2 });
+    }
+    onRadioBtnClick3(rSelected3) {
+        this.setState({ rSelected3 });
+    }
+    
+
+    render() {
+        return (
+            <div>
+                <Container>
+                    <Row>
+                        <Col>
+                            <Card>
+                                <Row>
+                                    <Col>
+                                        <CardBody>
+                                            <CardTitle>{this.props.quizTitle}</CardTitle>
+                                            <CardSubtitle>{this.props.Q1}</CardSubtitle>
+
+                                            <ButtonGroup className="buttonSize">
+                                                <Button
+                                                    onClick={(e) => {
+                                                        this.onRadioBtnClick1(1);
+                                                        this.props.handleClick1(e);
+                                                        }
+                                                    }
+                                                    active={this.state.rSelected1 === 1}
+                                                    value={this.props.correctQ1A1}>
+                                                    {this.props.Q1A1}</Button>
+                                                <Button onClick={(e) => {
+                                                        this.onRadioBtnClick1(2);
+                                                        this.props.handleClick1(e);
+                                                        }
+                                                    }
+                                                    active={this.state.rSelected1 === 2} value={this.props.correctQ1A2}>{this.props.Q1A2}</Button>
+                                                <Button onClick={(e) => {
+                                                        this.onRadioBtnClick1(3);
+                                                        this.props.handleClick1(e);
+                                                        }
+                                                    }
+                                                    active={this.state.rSelected1 === 3} value={this.props.correctQ1A3}>{this.props.Q1A3}</Button>
+                                                <Button onClick={(e) => {
+                                                        this.onRadioBtnClick1(4);
+                                                        this.props.handleClick1(e);
+                                                        }
+                                                    }
+                                                    active={this.state.rSelected1 === 4} value={this.props.correctQ1A4}>{this.props.Q1A4}</Button>
                                             </ButtonGroup>
 
-                                        <CardSubtitle><p id="subtitle">{props.Q2}</p></CardSubtitle>
+                                            <CardSubtitle>{this.props.Q2}</CardSubtitle>
 
-                                            <ButtonGroup >
-                                                <Button id="ansbtn" value={props.correctQ2A1}><p id="answer">{props.Q2A1}</p></Button>
-                                                <Button id="ansbtn" value={props.correctQ2A2}><p id="answer">{props.Q2A2}</p></Button>
-                                                <Button id="ansbtn" value={props.correctQ2A3}><p id="answer">{props.Q2A3}</p></Button>
-                                                <Button id="ansbtn" value={props.correctQ2A4}><p id="answer">{props.Q2A4}</p></Button>
+                                            <ButtonGroup className="buttonSize">
+                                                <Button onClick={(e) => {
+                                                        this.onRadioBtnClick2(1);
+                                                        this.props.handleClick2(e);
+                                                        }
+                                                    }
+                                                    active={this.state.rSelected2 === 1}
+                                                    value={this.props.correctQ1A1}>{this.props.Q2A1}</Button>
+                                                <Button onClick={(e) => {
+                                                        this.onRadioBtnClick2(2);
+                                                        this.props.handleClick2(e);
+                                                        }
+                                                    }
+                                                    active={this.state.rSelected2 === 2} value={this.props.correctQ2A2}>{this.props.Q2A2}</Button>
+                                                <Button onClick={(e) => {
+                                                        this.onRadioBtnClick2(3);
+                                                        this.props.handleClick2(e);
+                                                        }
+                                                    }
+                                                    active={this.state.rSelected2 === 3} value={this.props.correctQ2A3}>{this.props.Q2A3}</Button>
+                                                <Button onClick={(e) => {
+                                                        this.onRadioBtnClick2(4);
+                                                        this.props.handleClick2(e);
+                                                        }
+                                                    }
+                                                    active={this.state.rSelected2 === 4} value={this.props.correctQ2A4}>{this.props.Q2A4}</Button>
                                             </ButtonGroup>
 
-                                        <CardSubtitle><p id="subtitle">{props.Q3}</p></CardSubtitle>
+                                            <CardSubtitle>{this.props.Q3}</CardSubtitle>
 
-                                            <ButtonGroup >
-                                                <Button id="ansbtn" value={props.correctQ3A1}><p id="answer">{props.Q3A1}</p></Button>
-                                                <Button id="ansbtn" value={props.correctQ3A2}><p id="answer">{props.Q3A2}</p></Button>
-                                                <Button id="ansbtn" value={props.correctQ3A3}><p id="answer">{props.Q3A3}</p></Button>
-                                                <Button id="ansbtn" value={props.correctQ3A4}><p id="answer">{props.Q3A4}</p></Button>
+                                            <ButtonGroup className="buttonSize">
+                                                <Button onClick={(e) => {
+                                                        this.onRadioBtnClick3(1);
+                                                        this.props.handleClick3(e);
+                                                        }
+                                                    }
+                                                    active={this.state.rSelected3 === 1} value={this.props.correctQ3A1}>{this.props.Q3A1}</Button>
+                                                <Button onClick={(e) => {
+                                                        this.onRadioBtnClick3(2);
+                                                        this.props.handleClick3(e);
+                                                        }
+                                                    }
+                                                    active={this.state.rSelected3 === 2} value={this.props.correctQ3A2}>{this.props.Q3A2}</Button>
+                                                <Button onClick={(e) => {
+                                                        this.onRadioBtnClick3(3);
+                                                        this.props.handleClick3(e);
+                                                        }
+                                                    }
+                                                    active={this.state.rSelected3 === 3} value={this.props.correctQ3A3}>{this.props.Q3A3}</Button>
+                                                <Button onClick={(e) => {
+                                                        this.onRadioBtnClick3(4);
+                                                        this.props.handleClick3(e);
+                                                        }
+                                                    }
+                                                    active={this.state.rSelected3 === 4} value={this.props.correctQ3A4}>{this.props.Q3A4}</Button>
                                             </ButtonGroup>
 
-                                    </CardBody>
-                                </Col>
-                            </Row>
-                            <Row>
-                                <Col>
-                                    <div className="d-flex justify-content-center">
-                                        <Button className="btn-lg" onClick={props.handleSubmit}>Submit</Button>
-                                    </div>
-                                </Col>
+                                        </CardBody>
+                                    </Col>
+                                </Row>
+                                <Row>
+                                    <Col>
+                                        <div className="d-flex justify-content-center">
+                                            <Button className="btn-lg" onClick={this.props.handleSubmit}>Submit</Button>
+                                        </div>
+                                    </Col>
 
-                            </Row>
-
-
-
-                    </Col>
-                </Row>
+                                </Row>
 
 
-            </Container>
+                            </Card>
+                        </Col>
+                    </Row>
 
-        </div>
-    </body>
-)
+
+                </Container>
+
+            </div>
+        )
+    }
+}
 
 export default Quiz;
