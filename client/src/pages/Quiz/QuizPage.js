@@ -119,9 +119,7 @@ class QuizPage extends Component {
     componentDidMount() {
         QuizAPI.getQuiz(this.props.match.params.id)
             .then(res => {
-                console.log(res.data)
-                this.setState({ quiz: res.data })
-                // console.log("After set state:" + JSON.stringify(this.state.quiz))
+                this.setState({ quiz: res.data })             
             })
             .catch(err => console.log(err))
     };
