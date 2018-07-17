@@ -1,3 +1,18 @@
-.card-body {
-  color: purple;
+body {
+  background-image: url("../../images/chalkboard.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 675px;
+  }
+
+#quizbox {
+  font-family: 'Gaegu', cursive;
+  background-image: url("../../images/paper.jpg");
+  font-size: 30px;
 }
+
+.card-body {
+  margin: 5px;
+}
+
