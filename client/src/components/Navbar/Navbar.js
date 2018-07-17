@@ -1,6 +1,6 @@
 import React from "react";
 import history from "../../history";
-import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink, Button } from 'reactstrap';
+import { Collapse, Navbar, NavbarToggler, Nav, NavItem, NavLink, Button } from 'reactstrap';
 import './Navbar.css'
 
 class NavExample extends React.Component {
@@ -34,8 +34,10 @@ class NavExample extends React.Component {
   render() {
     const { isAuthenticated } = this.props.auth;
     return (
+
       <div id="nav">
         <Navbar color="faded" light>
+
           {
             !isAuthenticated() && (
               <Button
@@ -58,14 +60,18 @@ class NavExample extends React.Component {
               >
                 Log Out
                   </Button>
+
             )
           }
           <NavbarBrand href="/" className="mr-auto"><p id="logo">QuizMe</p></NavbarBrand>
+
           <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
           <Collapse isOpen={!this.state.collapsed} navbar>
             <Nav navbar>
               <NavItem>
+
                 <NavLink onClick={() => history.replace("/home")}><p id="link">Home</p></NavLink>
+
               </NavItem>
               <NavItem>
                 <NavLink onClick={() => history.replace("/quizzes")}><p id="link">View Quizzes</p></NavLink>
