@@ -1,7 +1,18 @@
-.btn-group{
+#btn-group{
     text-align: center;
-    margin: 5px 0px;
-    
+    margin: auto;
+    float: left;
+}
+
+CardBody {
+    margin-top: 100px;
+}
+
+#ansbtn {
+    background-image: url("../../images/paper.jpg");
+    font-family: 'Gaegu', cursive;
+    margin: 1.5px;
+    color: black;
 }
 .card-subtitle{
 margin-top: 5px;
@@ -21,4 +32,37 @@ margin-top: 5px;
 .btn{
     display: inline-block;
     width: 25%;
+    margin-top: 5px;
+}
+
+
+
+#title {
+    color: whitesmoke;
+    font-family: 'Fredericka the Great', cursive;
+    font-size: 50px;
+}
+
+#subtitle {
+    color: whitesmoke;
+    font-family: 'Fredericka the Great', cursive;
+    font-size: 30px;
+}
+
+#answer {
+    color: black;
+    font-family: 'Gaegu', cursive;
+}
+
+.btn-lg {
+    color: black;
+    background-image: url("../../images/paper.jpg");
+    margin-top: 10px;
+    font-family: 'Gaegu', cursive;
+    border-width: 0;
+}
+
+#box {
+    margin-top: 100px;
+    padding: 50px;
 }

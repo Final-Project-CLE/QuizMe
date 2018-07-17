@@ -5,10 +5,7 @@ import {
     Container, Row, Col
 } from 'reactstrap';
 
-import "./Quiz.css"
-
-
-
+import "./Quiz.css";
 
 class Quiz extends Component {
     constructor(props) {
