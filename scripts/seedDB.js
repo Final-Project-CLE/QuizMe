@@ -8,136 +8,134 @@ mongoose.connect(
 
 const quizSeed = [
     {
-        "id": 1,
-        "quizTitle": "Test Quiz 1",
-        "author": "Test Author 1",
+        "quizTitle": "Word Quiz",
+        "author": "Unknown",
         "q1": {
-            "question": "Question 1 q1",
+            "question": "1. When you’re capernoited, what are you?",
             "answers": {
                 "answer1": {
-                    "answer": "This is the first answer. It is wrong",
+                    "answer": "Slighty afraid",
                     "correct": "false"
                 },
                 "answer2": {
-                    "answer": "This is the second answer. It is wrong",
-                    "correct": "false"
+                    "answer": "Slightly drunk",
+                    "correct": "true"
                 },
                 "answer3": {
-                    "answer": "This is the third answer. It is wrong",
+                    "answer": "Slightly embarrassed",
                     "correct": "false"
                 },
                 "answer4": {
-                    "answer": "This is the fourth answer. It is right",
-                    "correct": "true"
+                    "answer": "Slightly out of tune",
+                    "correct": "false"
                 }
             }
         },
         "q2": {
-            "question": "Question 2 q1",
+            "question": "2. Cleromancy is divination involving what?",
             "answers": {
                 "answer1": {
-                    "answer": "This is the first answer. It is wrong",
-                    "correct": "false"
-                },
-                "answer2": {
-                    "answer": "This is the second answer. It is right",
+                    "answer": "Dice",
                     "correct": "true"
                 },
+                "answer2": {
+                    "answer": "Glass",
+                    "correct": "false"
+                },
                 "answer3": {
-                    "answer": "This is the third answer. It is wrong",
+                    "answer": "Twigs",
                     "correct": "false"
                 },
                 "answer4": {
-                    "answer": "This is the fourth answer. It is wrong",
+                    "answer": "Ink",
                     "correct": "false"
                 }
             }
         },
         "q3": {
-            "question": "Question 3 q1",
+            "question": "3. What does a nuxodeltiologist prefer postcard scenes of?",
             "answers": {
                 "answer1": {
-                    "answer": "This is the first answer. It is right",
-                    "correct": "true"
+                    "answer": "The road",
+                    "correct": "false"
                 },
                 "answer2": {
-                    "answer": "This is the second answer. It is wrong",
+                    "answer": "The trees",
                     "correct": "false"
                 },
                 "answer3": {
-                    "answer": "This is the third answer. It is wrong",
+                    "answer": "The ocean",
                     "correct": "false"
                 },
                 "answer4": {
-                    "answer": "This is the fourth answer. It is wrong",
-                    "correct": "false"
+                    "answer": "The night",
+                    "correct": "true"
                 }
             }
         }
     },
     {
-        "id": 2,
-        "quizTitle": "Test Quiz 2",
-        "author": "Test Author 2",
+        "quizTitle": "Christmas movie trivia",
+        "author": "Unknown",
         "q1": {
-            "question": "Question 1 q2",
+            "question": "1. In the 1995 movie, Babe, what was the first name of the farmer, who was Babe’s owner?",
             "answers": {
                 "answer1": {
-                    "answer": "This is the first answer for q1. It is wrong",
+                    "answer": " Bentley",
                     "correct": "false"
                 },
                 "answer2": {
-                    "answer": "This is the second answer for q1. It is wrong",
+                    "answer": "Richard",
                     "correct": "false"
                 },
                 "answer3": {
-                    "answer": "This is the third answer for q1. It is wrong",
+                    "answer": "Samuel",
                     "correct": "false"
                 },
                 "answer4": {
-                    "answer": "This is the fourth answer for q1. It is right",
+                    "answer": "Arthur",
                     "correct": "true"
                 }
             }
         },
         "q2": {
-            "question": "Question 2 q2",
+            "question": "2. Bill Murray had the fortune of acting with his three brothers in the movie Scrooged. Which of the following was not his brother?",
             "answers": {
                 "answer1": {
-                    "answer": "This is the first answer for q2. It is wrong",
+                    "answer": "Brian-Doyle Murray",
                     "correct": "false"
                 },
                 "answer2": {
-                    "answer": "This is the second answer for q2. It is right",
-                    "correct": "true"
-                },
-                "answer3": {
-                    "answer": "This is the third answer for q2. It is wrong",
+                    "answer": "Joel Murray",
                     "correct": "false"
                 },
+                "answer3": {
+                    "answer": "David Murray",
+                    "correct": "true"
+                },
                 "answer4": {
-                    "answer": "This is the fourth answer for q2. It is wrong",
+                    "answer": "John Murray",
                     "correct": "false"
                 }
             }
         },
         "q3": {
-            "question": "Question 3 q2",
+            "question": "3. In The Muppet Christmas Carol, which character sang the song ‘Chairman of the Board’?",
             "answers": {
                 "answer1": {
-                    "answer": "This is the first answer for q3. It is right",
-                    "correct": "true"
+                    "answer": "Lew Zealand",
+                    "correct": "false"
                 },
                 "answer2": {
-                    "answer": "This is the second answer for q3. It is wrong",
+                    "answer": "Dr Bunsen Honeydew",
                     "correct": "false"
                 },
                 "answer3": {
-                    "answer": "This is the third answer for q3. It is wrong",
-                    "correct": "false"
+                    "answer": "Sam the Eagle",
+                    "correct": "true"
                 },
                 "answer4": {
-                    "answer": "This is the fourth answer for q3. It is wrong",
+                    "answer": "Rizzo the Rat",
                     "correct": "false"
                 }
             }

@@ -6,3 +6,19 @@
 .card-subtitle{
 margin-top: 5px;
 }
+
+.buttonSize{
+    display: block;
+    width: 100%;
+    border: none;
+    color: white;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn{
+    display: inline-block;
+    width: 25%;
+}
