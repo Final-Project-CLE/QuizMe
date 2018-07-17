@@ -1,6 +1,6 @@
 import React from "react";
 import history from "../../history";
-import { Collapse, Navbar, NavbarToggler, Nav, NavItem, NavLink, Button } from 'reactstrap';
+import { Collapse, Navbar, NavbarBrand, NavbarToggler, Nav, NavItem, NavLink, Button } from 'reactstrap';
 import './Navbar.css'
 
 class NavExample extends React.Component {
