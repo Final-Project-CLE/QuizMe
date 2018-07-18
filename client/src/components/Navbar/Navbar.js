@@ -54,7 +54,7 @@ class NavExample extends React.Component {
             isAuthenticated() && (
               <Button
                 id="qsLogoutBtn"
-                bsStyle="primary"
+                bsstyle="primary"
                 className="btn-margin"
                 onClick={this.logout.bind(this)}
               >
@@ -63,21 +63,23 @@ class NavExample extends React.Component {
 
             )
           }
-          <NavbarBrand href="/" className="mr-auto"><p id="logo">QuizMe</p></NavbarBrand>
+          <NavbarBrand href="/" className="text-center"><p id="logo">QuizMe</p></NavbarBrand>
 
           <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
           <Collapse isOpen={!this.state.collapsed} navbar>
             <Nav navbar>
               <NavItem>
 
-                <NavLink onClick={() => history.replace("/home")}><p id="link">Home</p></NavLink>
+                <NavLink href="#" onClick={() => history.replace("/home")}><p id="link">Home</p></NavLink>
 
               </NavItem>
               <NavItem>
-                <NavLink onClick={() => history.replace("/quizzes")}><p id="link">View Quizzes</p></NavLink>
+                
+                <NavLink href="#" onClick={() => history.replace("/quizzes")}><p id="link">View Quizzes</p></NavLink>
+                
               </NavItem>
               <NavItem>
-                <NavLink onClick={() => history.replace("/newquiz")}><p id="link">Create a Quiz</p></NavLink>
+                <NavLink href="#" onClick={() => history.replace("/newquiz")}><p id="link">Create a Quiz</p></NavLink>
               </NavItem>
             </Nav>
           </Collapse>

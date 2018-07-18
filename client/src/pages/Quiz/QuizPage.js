@@ -126,7 +126,7 @@ class QuizPage extends Component {
 
     render() {
         return (
-            <div>
+            
                 <div>
                     <Quiz
                         quizTitle={this.state.quiz.quizTitle}
@@ -171,7 +171,7 @@ class QuizPage extends Component {
                     />
 
                 </div>
-            </div>
+            
         );
 
     };
