@@ -2,11 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./QuizBox.css"
 const style = {
-  margin: "100px"
+  margin: "20px"
 }
 
 const QuizBox = props => (
-  <body>
+
     <div className="card col-4-md" id="quizbox" style={style}>
         <div className="card-body">
           <Link to={"/quiz/" + props.id} >
@@ -14,7 +14,7 @@ const QuizBox = props => (
           </Link>
         </div>
     </div>
-  </body>
+
 )
 
 export default QuizBox;
