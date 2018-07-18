@@ -70,7 +70,7 @@ class NavExample extends React.Component {
             <Nav navbar>
               <NavItem>
 
-                <NavLink href="#" onClick={() => history.replace("/home")}><p id="link">Home</p></NavLink>
+                <NavLink href="#" onClick={() => history.replace("/")}><p id="link">Home</p></NavLink>
 
               </NavItem>
               <NavItem>
