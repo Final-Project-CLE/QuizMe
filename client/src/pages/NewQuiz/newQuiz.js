@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 
-import QuizAPI from "../../utils/QuizAPI";
+import API from "../../utils/QuizAPI";
 import { Link } from "react-router-dom";
 import Jumbotron from '../../components/Jumbotron/Jumbotron';
-import 'bootstrap/dist/css/bootstrap.css';
+import { Input, Button } from 'reactstrap';
 
 let correct=false;
 class newQuiz extends Component {
@@ -15,8 +15,8 @@ class newQuiz extends Component {
     answer2:"",
     answer3:"",
     answer4:"",
-    correct,
-    rightAnswer=""
+    correct:"",
+    rightAnswer:""
     
 
   };
@@ -37,11 +37,11 @@ class newQuiz extends Component {
     this.setState({
       [name]: value
     });
-    if(name===answer1){
+    if(name===this.state.answer1){
       this.setState({correct});
-    } else if(name===answer2){
+    } else if(name===this.state.answer2){
       this.setState({correct});
-    }else if(name===answer3){
+    }else if(name===this.state.answer3){
       this.setState({correct});
     } else{this.setState({correct});}
     
@@ -58,8 +58,7 @@ class newQuiz extends Component {
   
   handleFormSubmit = event => {
     event.preventDefault();
-    
-      API.saveQuiz({
+    API.saveQuiz({
         title: this.state.title,
         author: this.state.author,
         question: this.state.question,
@@ -69,10 +68,12 @@ class newQuiz extends Component {
         answer4:this.state.answer4,
         correct:this.state.correct
       }
+    
     )
         .then(res => this.loadQuiz())
         .catch(err => console.log(err));
     
+
   };
 
 
@@ -80,7 +81,6 @@ class newQuiz extends Component {
     return (
 
       <div>
-        <Jumbotron>
           <h2>Create New Quiz</h2>
           <form>
               <Input
@@ -147,14 +147,13 @@ class newQuiz extends Component {
                 name="rightAnswer"
                 placeholder="Type right answer here (required)"
               />
-              <FormBtn
+              <Button
                 
                 onClick={this.handleFormSubmit}
               >
                 Submit New Quiz
-              </FormBtn>
+              </Button>
               </form>
-        </Jumbotron>
         </div>
         
       
