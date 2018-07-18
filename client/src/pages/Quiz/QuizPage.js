@@ -6,7 +6,9 @@ import Quiz from "../../components/Quiz/Quiz";
 let Q1Correct = "";
 let Q2Correct = "";
 let Q3Correct = "";
-let score = 0;
+let score1 = 0;
+let score2 = 0;
+let score3 = 0;
 
 class QuizPage extends Component {
     constructor(props){
@@ -86,17 +88,21 @@ class QuizPage extends Component {
 }
 
     handleSubmit() {
+        let score = score1 + score2+ score3
         alert("You got " + score + " out of 3 correct.")
-        score = 0;
-        window.location.reload();
+        
+        // window.location.reload();
     }
 
     handleClick1(event) {
         Q1Correct = event.target.value;
         
         if (Q1Correct === "true"){
-            score++
+            score1 = 1
+        }  else {
+            score1 = 0
         }
+        
     }
 
 
@@ -104,31 +110,35 @@ class QuizPage extends Component {
         Q2Correct = event.target.value;
         
         if (Q2Correct === "true"){
-            score++
+            score2 = 1
+        } else {
+            score2 = 0
         }
+        
     }
 
     handleClick3(event) {
         Q3Correct = event.target.value;
         
         if (Q3Correct === "true"){
-            score++
+            score3 = 1
+        }  else {
+            score3 = 0
         }
+        
     }
 
     componentDidMount() {
         QuizAPI.getQuiz(this.props.match.params.id)
             .then(res => {
-                console.log(res.data)
-                this.setState({ quiz: res.data })
-                // console.log("After set state:" + JSON.stringify(this.state.quiz))
+                this.setState({ quiz: res.data })             
             })
             .catch(err => console.log(err))
     };
 
     render() {
         return (
-            <div>
+            
                 <div>
                     <Quiz
                         quizTitle={this.state.quiz.quizTitle}
@@ -173,7 +183,7 @@ class QuizPage extends Component {
                     />
 
                 </div>
-            </div>
+            
         );
 
     };

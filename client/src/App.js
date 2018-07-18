@@ -8,6 +8,7 @@ import Quizzes from './pages/Quizzes'
 import NavExample from './components/Navbar/Navbar';
 import NewQuiz from './pages/NewQuiz';
 import QuizPage from "./pages/Quiz/QuizPage";
+import "./App.css"
 
 const auth = new Auth();
 
@@ -21,7 +22,8 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      
+      <div className="background">
         {auth.isAuthenticated ? <NavExample auth={auth} /> : null}
         <Router history={history}>
           <div>
@@ -37,6 +39,7 @@ class App extends Component {
           </div>
         </Router>
       </div>
+      
         );
       }
     }
