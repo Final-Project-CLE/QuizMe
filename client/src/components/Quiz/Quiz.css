@@ -8,18 +8,11 @@ CardBody {
     margin-top: 100px;
 }
 
-#ansbtn {
-    background-image: url("../../images/paper.jpg");
-    font-family: 'Gaegu', cursive;
-    margin: 1.5px;
-    color: black;
-}
 .card-subtitle{
 color: whitesmoke;
     font-family: 'Fredericka the Great', cursive;
     font-size: 30px;
 }
-
 
 .buttonSize{
     display: block;
@@ -43,7 +36,9 @@ color: whitesmoke;
     font-size: 20px;
 }
 
-
+.active{
+    border: 5px solid black;
+}
 
 #title {
     color: whitesmoke;
