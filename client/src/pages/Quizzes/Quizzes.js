@@ -16,7 +16,6 @@ class Quizzes extends Component {
   };
 
   loadQuizzes() {
-    console.log('I AM A LOAD THING')
     QuizAPI.getQuizzes()
     .then(res =>
       this.setState({ 
@@ -32,7 +31,7 @@ class Quizzes extends Component {
           <div className="row">
             {this.state.quizzes.map(item => (
               <QuizBox
-                key={item.id}
+                key={item._id}
                 id={item._id}
                 quizTitle={item.quizTitle}
               />

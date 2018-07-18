@@ -1,3 +1,18 @@
-.navbar {
-    padding: 0px 0px 0px;
+.mr-2  {
+    margin-left: 0.5em !important;
+}
+
+#nav {
+    background-image: url("../../images/chalkboard.jpg");
+    font-family: 'Fredericka the Great', cursive;
+}
+
+#logo {
+    color: white;
+    background-image: url("../../images/chalkboard.jpg");
+    padding-left: 650px;
+}
+
+#link {
+    color: white;
 }
