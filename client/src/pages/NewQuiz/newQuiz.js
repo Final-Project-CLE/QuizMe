@@ -87,21 +87,21 @@ class newQuiz extends Component {
                 value={this.state.title}
                 onChange={this.handleInputChange}
                 name="title"
-                placeholder="Title (required)"
+                placeholder="Title"
               />
               <Input
                 value={this.state.author}
                 onChange={this.handleInputChange}
                 name="author"
                 
-                placeholder="Author (required)"
+                placeholder="Author "
                 
               />
               <Input
                 value={this.state.question}
                 onChange={this.handleInputChange}
                 name="question"
-                placeholder="question (required)"
+                placeholder="question "
               />
              
       
@@ -110,7 +110,7 @@ class newQuiz extends Component {
                 onChange={this.handleInputChange}
                 name="answer1"
                 correct={this.state.correct}
-                placeholder="Answer 1 (required)"
+                placeholder="Answer 1"
               />
               
         
@@ -119,7 +119,7 @@ class newQuiz extends Component {
                 onChange={this.handleInputChange}
                 name="answer2"
                 correct={this.state.correct}
-                placeholder="Answer 2 (required)"
+                placeholder="Answer 2 "
               />
             
         
@@ -129,7 +129,7 @@ class newQuiz extends Component {
                 onChange={this.handleInputChange}
                 correct={this.state.correct}
                 name="answer3"
-                placeholder="Answer 3 (required)"
+                placeholder="Answer 3"
               />
                
        
@@ -138,14 +138,14 @@ class newQuiz extends Component {
                 onChange={this.handleInputChange}
                 correct={this.state.correct}
                 name="answer4"
-                placeholder="Answer 4 (required)"
+                placeholder="Answer 4"
               />
                 <Input
                 value={this.state.rightAnswer}
                 onChange={this.handleInputChange}
                 correct={this.handleRightAnswer}
                 name="rightAnswer"
-                placeholder="Type right answer here (required)"
+                placeholder="Type right answer here"
               />
               <Button
                 
