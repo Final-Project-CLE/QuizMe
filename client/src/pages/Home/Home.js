@@ -17,9 +17,9 @@ class Home extends Component {
     
         <div className="home">
           <Jumbotron />
-          <div id="p1"><p>Home Page</p></div>
-          <div id="p2"><p>Other Stuff Here</p></div>
-          <Quizzes />
+          <div className="align-content-center text-center" id="p1"><p>Home Page</p></div>
+          <div className="align-content-center text-center"  id="p2"><p>Other Stuff Here</p><Quizzes /></div>
+          
         </div>
       
     );
