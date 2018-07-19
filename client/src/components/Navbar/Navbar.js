@@ -18,9 +18,9 @@ class NavExample extends React.Component {
       collapsed: !this.state.collapsed
     });
   }
-  goTo(route) {
-    this.props.history.replace(`/${route}`)
-  }
+    goTo(route) {
+      this.props.history.replace(`/${route}`)
+    }
 
   login() {
     this.props.auth.login();
@@ -39,26 +39,38 @@ class NavExample extends React.Component {
         <Navbar color="faded" light>
 
           {
-              !isAuthenticated() && (
-                <Button
-                  id="qsLoginBtn"
-                  bsstyle="primary"
-                  className="btn-margin"
-                  onClick={this.login.bind(this)}
-                >
-                  Log In
+            !isAuthenticated() && (
+              <Button
+                id="qsLoginBtn"
+                bsstyle="primary"
+                className="btn-margin"
+                onClick={this.login.bind(this)}
+              >
+                Log In
                   </Button>
-              )
-            }
-            {
-              isAuthenticated() && (
-                <Button
-                  id="qsLogoutBtn"
-                  bsstyle="primary"
-                  className="btn-margin"
-                  onClick={this.logout.bind(this)}
-                >
-                  Log Out
+            )
+          }
+          {
+            isAuthenticated() && (
+              <Button
+                id="qsProfileBtn"
+                bsstyle="primary"
+                className="btn-margin"
+                onClick={this.goTo.bind(this, 'profile')}
+              >
+                Your Profile
+                  </Button>
+            )
+          }
+          {
+            isAuthenticated() && (
+              <Button
+                id="qsLogoutBtn"
+                bsstyle="primary"
+                className="btn-margin"
+                onClick={this.logout.bind(this)}
+              >
+                Log Out
 
                   </Button>
 
@@ -75,9 +87,9 @@ class NavExample extends React.Component {
 
               </NavItem>
               <NavItem>
-                
+
                 <NavLink href="#" onClick={() => history.replace("/quizzes")}><p id="link">View Quizzes</p></NavLink>
-                
+
               </NavItem>
               <NavItem>
                 <NavLink href="#" onClick={() => history.replace("/newquiz")}><p id="link">Create a Quiz</p></NavLink>

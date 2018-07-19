@@ -20,7 +20,8 @@ class Home extends Component {
           <br></br>
           <div id="p1"><p>Home Page</p></div>
           <br></br>
-          <div id="p2"><p>Other Stuff Here</p><Quizzes /></div>
+          <div id="p2"><p>Other Stuff Here</p>
+          <Quizzes /></div>
           
         </div>
       

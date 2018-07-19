@@ -2,11 +2,8 @@
 import React, { Component } from "react";
 
 import API from "../../utils/QuizAPI";
-import { Link } from "react-router-dom";
-import Jumbotron from '../../components/Jumbotron/Jumbotron';
 import { Input, Button } from 'reactstrap';
 
-let correct=false;
 class newQuiz extends Component {
   state = {
     title: "",
