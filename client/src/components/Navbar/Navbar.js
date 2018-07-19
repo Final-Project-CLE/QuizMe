@@ -56,7 +56,7 @@ class NavExample extends React.Component {
                 id="qsProfileBtn"
                 bsstyle="primary"
                 className="btn-margin"
-                onClick={this.goTo.bind(this, 'profile')}
+                onClick={() =>history.replace("/profile")}
               >
                 Your Profile
                   </Button>
