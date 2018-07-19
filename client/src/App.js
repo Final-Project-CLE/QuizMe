@@ -9,6 +9,7 @@ import NavExample from './components/Navbar/Navbar';
 import NewQuiz from './pages/NewQuiz';
 import QuizPage from "./pages/Quiz/QuizPage";
 import "./App.css"
+import Profile from './pages/Profile/Profile';
 
 const auth = new Auth();
 
@@ -29,6 +30,7 @@ class App extends Component {
         <Router history={history}>
           <div>
             <Route exact path="/" render={(props) => <Home auth={auth} {...props} />} />
+            <Route path="/profile" render={(props) => <Profile auth={auth} {...props} />} /> 
             <Route path="/quizzes" render={(props) => <Quizzes auth={auth} {...props} />} />
             <Route path="/quiz/:id" render={(props) => <QuizPage auth={auth} {...props} />} />
             <Route path="/newquiz" render={(props) => <NewQuiz auth={auth} {...props} />} />
