@@ -1,4 +1,5 @@
 
+
 import React, { Component } from "react";
 import quizAPI from "../../utils/QuizAPI";
 import { Input, Button, Label} from 'reactstrap';
@@ -129,7 +130,8 @@ class newQuiz extends Component {
       }
     }
     console.log(JSON.stringify(quizSeed))
-    quizAPI.saveQuiz({ quizTitle: this.state.title,
+    quizAPI.saveQuiz({ 
+      quizTitle: this.state.title,
       author: this.state.author,
       q1: {
         question: this.state.question1,
@@ -194,7 +196,7 @@ class newQuiz extends Component {
           }
         }
       } })
-      .then(history.replace("/"))
+      // .then(history.replace("/"))
       .catch(err => console.log(err));
 
 
@@ -294,7 +296,7 @@ class newQuiz extends Component {
           placeholder="Yes or No" onChange= {value => this.setState({correctq1a4:value})}          
           />
 
-          <Label for="correctAnswer" className="labelMe">What's the next Question?</Label>
+          <Label for="correctAnswer" className="labelMe">What is the next Question?</Label>
 
           <Input
             value={this.state.question2}
@@ -364,7 +366,7 @@ class newQuiz extends Component {
           placeholder="Yes or No" onChange= {value => this.setState({correctq2a4:value})}          
           />
 
-          <Label for="correctAnswer" className="labelMe">What's the next Question?</Label>
+          <Label for="correctAnswer" className="labelMe">What is the next Question?</Label>
 
           <Input
             value={this.state.question3}
