@@ -64,7 +64,7 @@ class NavExample extends React.Component {
 
             )
           }
-          <NavbarBrand href="/" className="text-center"><p id="logo">QuizMe</p></NavbarBrand>
+          <NavbarBrand href="/" className="text-center"><p id="logo"></p></NavbarBrand>
 
           <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
           <Collapse isOpen={!this.state.collapsed} navbar>
