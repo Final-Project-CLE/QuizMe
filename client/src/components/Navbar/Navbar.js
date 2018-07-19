@@ -18,9 +18,9 @@ class NavExample extends React.Component {
       collapsed: !this.state.collapsed
     });
   }
-  goTo(route) {
-    this.props.history.replace(`/${route}`)
-  }
+    goTo(route) {
+      this.props.history.replace(`/${route}`)
+    }
 
   login() {
     this.props.auth.login();
@@ -53,17 +53,30 @@ class NavExample extends React.Component {
           {
             isAuthenticated() && (
               <Button
+                id="qsProfileBtn"
+                bsstyle="primary"
+                className="btn-margin"
+                onClick={() =>history.replace("/profile")}
+              >
+                Your Profile
+                  </Button>
+            )
+          }
+          {
+            isAuthenticated() && (
+              <Button
                 id="qsLogoutBtn"
                 bsstyle="primary"
                 className="btn-margin"
                 onClick={this.logout.bind(this)}
               >
                 Log Out
+
                   </Button>
 
             )
           }
-          <NavbarBrand href="/" className="text-center"><p id="logo">QuizMe</p></NavbarBrand>
+          <NavbarBrand href="/" className="text-center"><p id="logo"></p></NavbarBrand>
 
           <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
           <Collapse isOpen={!this.state.collapsed} navbar>
@@ -74,9 +87,9 @@ class NavExample extends React.Component {
 
               </NavItem>
               <NavItem>
-                
+
                 <NavLink href="#" onClick={() => history.replace("/quizzes")}><p id="link">View Quizzes</p></NavLink>
-                
+
               </NavItem>
               <NavItem>
                 <NavLink href="#" onClick={() => history.replace("/newquiz")}><p id="link">Create a Quiz</p></NavLink>
