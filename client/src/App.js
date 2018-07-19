@@ -8,6 +8,7 @@ import Quizzes from './pages/Quizzes'
 import NavExample from './components/Navbar/Navbar';
 import NewQuiz from './pages/NewQuiz';
 import QuizPage from "./pages/Quiz/QuizPage";
+import "./App.css"
 
 const auth = new Auth();
 
@@ -21,7 +22,8 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      
+      <div className="background">
         {auth.isAuthenticated ? <NavExample auth={auth} /> : null}
         {/* if truthy on left of ? show what is betwen ? and : if falsey than show what is on the right of the : */}
         <Router history={history}>
@@ -38,6 +40,7 @@ class App extends Component {
           </div>
         </Router>
       </div> 
+
         );
       }
     }
