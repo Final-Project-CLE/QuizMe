@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import Jumbotron from '../../components/Jumbotron/Jumbotron';
 import { Input, Button } from 'reactstrap';
 
-let correct=false;
+
 class newQuiz extends Component {
   state = {
     title: "",
@@ -15,7 +15,7 @@ class newQuiz extends Component {
     answer2:"",
     answer3:"",
     answer4:"",
-    correct:"",
+    correct:false,
     rightAnswer:""
     
 
