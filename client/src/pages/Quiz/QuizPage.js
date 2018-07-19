@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import history from "../../history";
 import QuizAPI from "../../utils/QuizAPI";
 import Quiz from "../../components/Quiz/Quiz";
 
@@ -90,8 +90,7 @@ class QuizPage extends Component {
     handleSubmit() {
         let score = score1 + score2+ score3
         alert("You got " + score + " out of 3 correct.")
-        
-        // window.location.reload();
+        history.replace("/")
     }
 
     handleClick1(event) {

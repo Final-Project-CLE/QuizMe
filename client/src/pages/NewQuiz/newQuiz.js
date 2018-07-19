@@ -3,9 +3,7 @@ import quizAPI from "../../utils/QuizAPI";
 import { Input, Button, Label} from 'reactstrap';
 import "./newQuiz.css"
 import Select from 'react-select';
-
-
-
+import history from "../../history";
 
 const options  = [
   { value: 'true', label: 'Yes' },
@@ -63,77 +61,140 @@ class newQuiz extends Component {
     event.preventDefault();
     
     let quizSeed = {
-      "quizTitle": this.state.title,
-      "author": this.state.author,
-      "q1": {
-        "question": this.state.question1,
-        "answers": {
-          "answer1": {
-            "answer": this.state.answerq1a1,
-            "correct": this.state.correctq1a1.value
+      quizTitle: this.state.title,
+      author: this.state.author,
+      q1: {
+        question: this.state.question1,
+        answers: {
+          answer1: {
+            answer: this.state.answerq1a1,
+            correct: this.state.correctq1a1.value
           },
-          "answer2": {
-            "answer": this.state.answerq1a2,
-            "correct": this.state.correctq1a2.value
+          answer2: {
+            answer: this.state.answerq1a2,
+            correct: this.state.correctq1a2.value
           },
-          "answer3": {
-            "answer": this.state.answerq1a3,
-            "correct": this.state.correctq1a3.value
+          answer3: {
+            answer: this.state.answerq1a3,
+            correct: this.state.correctq1a3.value
           },
-          "answer4": {
-            "answer": this.state.answerq1a4,
-            "correct": this.state.correctq1a4.value
+          answer4: {
+            answer: this.state.answerq1a4,
+            correct: this.state.correctq1a4.value
           }
         }
       },
-      "q2": {
-        "question": this.state.question2,
-        "answers": {
-          "answer1": {
-            "answer": this.state.answerq2a1,
-            "correct": this.state.correctq2a1.value
+      q2: {
+        question: this.state.question2,
+        answers: {
+          answer1: {
+            answer: this.state.answerq2a1,
+            correct: this.state.correctq2a1.value
           },
-          "answer2": {
-            "answer": this.state.answerq2a2,
-            "correct": this.state.correctq2a2.value
+          answer2: {
+            answer: this.state.answerq2a2,
+            correct: this.state.correctq2a2.value
           },
-          "answer3": {
-            "answer": this.state.answerq2a3,
-            "correct": this.state.correctq2a3.value
+          answer3: {
+            answer: this.state.answerq2a3,
+            correct: this.state.correctq2a3.value
           },
-          "answer4": {
-            "answer": this.state.answerq2a4,
-            "correct": this.state.correctq2a4.value
+          answer4: {
+            answer: this.state.answerq2a4,
+            correct: this.state.correctq2a4.value
           }
         }
       },
-      "q3": {
-        "question": this.state.question3,
-        "answers": {
-          "answer1": {
-            "answer": this.state.answerq3a1,
-            "correct": this.state.correctq3a1.value
+      q3: {
+        question: this.state.question3,
+        answers: {
+          answer1: {
+            answer: this.state.answerq3a1,
+            correct: this.state.correctq3a1.value
           },
-          "answer2": {
-            "answer": this.state.answerq3a2,
-            "correct": this.state.correctq3a2.value
+          answer2: {
+            answer: this.state.answerq3a2,
+            correct: this.state.correctq3a2.value
           },
-          "answer3": {
-            "answer": this.state.answerq3a3,
-            "correct": this.state.correctq3a3.value
+          answer3: {
+            answer: this.state.answerq3a3,
+            correct: this.state.correctq3a3.value
           },
-          "answer4": {
-            "answer": this.state.answerq3a4,
-            "correct": this.state.correctq3a4.value
+          answer4: {
+            answer: this.state.answerq3a4,
+            correct: this.state.correctq3a4.value
           }
         }
       }
     }
     console.log(JSON.stringify(quizSeed))
-    // quizAPI.saveQuiz({ quizSeed }
-    // )
-    //   .then(res => this.loadQuiz())
-    //   .catch(err => console.log(err));
+    quizAPI.saveQuiz({ quizTitle: this.state.title,
+      author: this.state.author,
+      q1: {
+        question: this.state.question1,
+        answers: {
+          answer1: {
+            answer: this.state.answerq1a1,
+            correct: this.state.correctq1a1.value
+          },
+          answer2: {
+            answer: this.state.answerq1a2,
+            correct: this.state.correctq1a2.value
+          },
+          answer3: {
+            answer: this.state.answerq1a3,
+            correct: this.state.correctq1a3.value
+          },
+          answer4: {
+            answer: this.state.answerq1a4,
+            correct: this.state.correctq1a4.value
+          }
+        }
+      },
+      q2: {
+        question: this.state.question2,
+        answers: {
+          answer1: {
+            answer: this.state.answerq2a1,
+            correct: this.state.correctq2a1.value
+          },
+          answer2: {
+            answer: this.state.answerq2a2,
+            correct: this.state.correctq2a2.value
+          },
+          answer3: {
+            answer: this.state.answerq2a3,
+            correct: this.state.correctq2a3.value
+          },
+          answer4: {
+            answer: this.state.answerq2a4,
+            correct: this.state.correctq2a4.value
+          }
+        }
+      },
+      q3: {
+        question: this.state.question3,
+        answers: {
+          answer1: {
+            answer: this.state.answerq3a1,
+            correct: this.state.correctq3a1.value
+          },
+          answer2: {
+            answer: this.state.answerq3a2,
+            correct: this.state.correctq3a2.value
+          },
+          answer3: {
+            answer: this.state.answerq3a3,
+            correct: this.state.correctq3a3.value
+          },
+          answer4: {
+            answer: this.state.answerq3a4,
+            correct: this.state.correctq3a4.value
+          }
+        }
+      } })
+      .then(history.replace("/"))
+      .catch(err => console.log(err));
 
 
   };
@@ -177,7 +238,8 @@ class newQuiz extends Component {
           />
           
           <Label for="correctAnswer" className="labelMe">Is this the Correct Answer?</Label>
-          <Select 
+          <Select
+          className="dropBox" 
           name="correctq1a1"     
           options={options} 
           placeholder="Yes or No"
@@ -193,7 +255,8 @@ class newQuiz extends Component {
           />
 
           <Label for="correctAnswer" className="labelMe">Is this the Correct Answer?</Label>
-          <Select 
+          <Select
+          className="dropBox"  
           name="correctq1a2"     
           options={options} 
           placeholder="Yes or No" onChange= {value => this.setState({correctq1a2:value})}          
@@ -208,6 +271,7 @@ class newQuiz extends Component {
 
           <Label for="correctAnswer" className="labelMe">Is this the Correct Answer?</Label>
           <Select 
+          className="dropBox" 
           name="correctq1a3"     
           options={options} 
           placeholder="Yes or No" onChange= {value => this.setState({correctq1a3:value})}          
@@ -223,11 +287,13 @@ class newQuiz extends Component {
 
           <Label for="correctAnswer" className="labelMe">Is this the Correct Answer?</Label>
           <Select 
+          className="dropBox" 
           name="correctq1a4"     
           options={options} 
           placeholder="Yes or No" onChange= {value => this.setState({correctq1a4:value})}          
           />
 
+          <Label for="correctAnswer" className="labelMe">What's the next Question?</Label>
 
           <Input
             value={this.state.question2}
@@ -246,6 +312,7 @@ class newQuiz extends Component {
 
           <Label for="correctAnswer" className="labelMe">Is this the Correct Answer?</Label>
           <Select 
+          className="dropBox" 
           name="correctq2a1"     
           options={options} 
           placeholder="Yes or No" onChange= {value => this.setState({correctq2a1:value})}          
@@ -260,6 +327,7 @@ class newQuiz extends Component {
 
           <Label for="correctAnswer" className="labelMe">Is this the Correct Answer?</Label>
           <Select 
+          className="dropBox" 
           name="correctq2a2"     
           options={options} 
           placeholder="Yes or No" onChange= {value => this.setState({correctq2a2:value})}          
@@ -274,6 +342,7 @@ class newQuiz extends Component {
 
           <Label for="correctAnswer" className="labelMe">Is this the Correct Answer?</Label>
           <Select 
+          className="dropBox" 
           name="correctq2a3"     
           options={options} 
           placeholder="Yes or No" onChange= {value => this.setState({correctq2a3:value})}          
@@ -288,10 +357,13 @@ class newQuiz extends Component {
 
           <Label for="correctAnswer" className="labelMe">Is this the Correct Answer?</Label>
           <Select 
+          className="dropBox" 
           name="correctq2a4"     
           options={options} 
           placeholder="Yes or No" onChange= {value => this.setState({correctq2a4:value})}          
           />
+
+          <Label for="correctAnswer" className="labelMe">What's the next Question?</Label>
 
           <Input
             value={this.state.question3}
@@ -310,6 +382,7 @@ class newQuiz extends Component {
 
           <Label for="correctAnswer" className="labelMe">Is this the Correct Answer?</Label>
           <Select 
+          className="dropBox" 
           name="correctq3a1"     
           options={options} 
           placeholder="Yes or No" onChange= {value => this.setState({correctq3a1:value})}          
@@ -324,6 +397,7 @@ class newQuiz extends Component {
 
           <Label for="correctAnswer" className="labelMe">Is this the Correct Answer?</Label>
           <Select 
+          className="dropBox" 
           name="correctq3a2"     
           options={options} 
           placeholder="Yes or No" onChange= {value => this.setState({correctq3a2:value})}          
@@ -338,6 +412,7 @@ class newQuiz extends Component {
 
           <Label for="correctAnswer" className="labelMe">Is this the Correct Answer?</Label>
           <Select 
+          className="dropBox" 
           name="correctq3a3"     
           options={options} 
           placeholder="Yes or No" onChange= {value => this.setState({correctq3a3:value})}          
@@ -352,6 +427,7 @@ class newQuiz extends Component {
 
           <Label for="correctAnswer" className="labelMe">Is this the Correct Answer?</Label>
           <Select 
+          className="dropBox" 
           name="correctq3a4"     
           options={options} 
           placeholder="Yes or No" onChange= {value => this.setState({correctq3a4:value})}          
