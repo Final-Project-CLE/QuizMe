@@ -28,7 +28,7 @@ export default class Auth {
       if (authResult && authResult.accessToken && authResult.idToken) {
         this.setSession(authResult);
         console.log(authResult);
-        history.replace('/');
+        history.replace('/quizzes');
       } else if (err) {
         history.replace('/');
         console.log(err);
