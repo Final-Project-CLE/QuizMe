@@ -1,78 +1,21 @@
 import React, { Component } from "react";
 import quizAPI from "../../utils/QuizAPI";
-import { Input, Button, Label, FormGroup } from 'reactstrap';
+import { Input, Button, Label} from 'reactstrap';
 import "./newQuiz.css"
+import Select from 'react-select';
 
-// let quizSeed = {
-//   "quizTitle": this.state.quizTitle,
-//   "author": this.state.author,
-//   "q1": {
-//     "question": this.state.question1,
-//     "answers": {
-//       "answer1": {
-//         "answer": this.state.answerq1a1,
-//         "correct": this.state.correctq1a1
-//       },
-//       "answer2": {
-//         "answer": this.state.answerq1a2,
-//         "correct": this.state.correctq1a2
-//       },
-//       "answer3": {
-//         "answer": this.state.answerq1a3,
-//         "correct": this.state.correctq1a3
-//       },
-//       "answer4": {
-//         "answer": this.state.answerq1a4,
-//         "correct": this.state.correctq1a4
-//       }
-//     }
-//   },
-//   "q2": {
-//     "question": this.state.question2,
-//     "answers": {
-//       "answer1": {
-//         "answer": this.state.answerq2a1,
-//         "correct": this.state.correctq2a1
-//       },
-//       "answer2": {
-//         "answer": this.state.answerq2a2,
-//         "correct": this.state.correctq2a2
-//       },
-//       "answer3": {
-//         "answer": this.state.answerq2a3,
-//         "correct": this.state.correctq2a3
-//       },
-//       "answer4": {
-//         "answer": this.state.answerq2a4,
-//         "correct": this.state.correctq2a4
-//       }
-//     }
-//   },
-//   "q3": {
-//     "question": this.state.question3,
-//     "answers": {
-//       "answer1": {
-//         "answer": this.state.answerq3a1,
-//         "correct": this.state.correctq3a1
-//       },
-//       "answer2": {
-//         "answer": this.state.answerq3a2,
-//         "correct": this.state.correctq3a2
-//       },
-//       "answer3": {
-//         "answer": this.state.answerq3a3,
-//         "correct": this.state.correctq3a3
-//       },
-//       "answer4": {
-//         "answer": this.state.answerq3a4,
-//         "correct": this.state.correctq3a4
-//       }
-//     }
-//   }
-// }
+
+
+
+const options  = [
+  { value: 'true', label: 'Yes' },
+  { value: 'false', label: 'No' }
+]
 
 class newQuiz extends Component {
-  state = {
+  constructor(props){
+    super(props);
+  this.state = {
     title: "",
     author: "",
     question1: "",
@@ -104,9 +47,8 @@ class newQuiz extends Component {
     correctq3a3: "",
     answerq3a4: "",
     correctq3a4: ""
-
-
   };
+}
 
   handleInputChange = event => {
     // Destructure the name and value properties off of event.target
@@ -117,19 +59,88 @@ class newQuiz extends Component {
     });
   };
 
+  handleFormSubmit = event => {
+    event.preventDefault();
+    
+    let quizSeed = {
+      "quizTitle": this.state.title,
+      "author": this.state.author,
+      "q1": {
+        "question": this.state.question1,
+        "answers": {
+          "answer1": {
+            "answer": this.state.answerq1a1,
+            "correct": this.state.correctq1a1.value
+          },
+          "answer2": {
+            "answer": this.state.answerq1a2,
+            "correct": this.state.correctq1a2.value
+          },
+          "answer3": {
+            "answer": this.state.answerq1a3,
+            "correct": this.state.correctq1a3.value
+          },
+          "answer4": {
+            "answer": this.state.answerq1a4,
+            "correct": this.state.correctq1a4.value
+          }
+        }
+      },
+      "q2": {
+        "question": this.state.question2,
+        "answers": {
+          "answer1": {
+            "answer": this.state.answerq2a1,
+            "correct": this.state.correctq2a1.value
+          },
+          "answer2": {
+            "answer": this.state.answerq2a2,
+            "correct": this.state.correctq2a2.value
+          },
+          "answer3": {
+            "answer": this.state.answerq2a3,
+            "correct": this.state.correctq2a3.value
+          },
+          "answer4": {
+            "answer": this.state.answerq2a4,
+            "correct": this.state.correctq2a4.value
+          }
+        }
+      },
+      "q3": {
+        "question": this.state.question3,
+        "answers": {
+          "answer1": {
+            "answer": this.state.answerq3a1,
+            "correct": this.state.correctq3a1.value
+          },
+          "answer2": {
+            "answer": this.state.answerq3a2,
+            "correct": this.state.correctq3a2.value
+          },
+          "answer3": {
+            "answer": this.state.answerq3a3,
+            "correct": this.state.correctq3a3.value
+          },
+          "answer4": {
+            "answer": this.state.answerq3a4,
+            "correct": this.state.correctq3a4.value
+          }
+        }
+      }
+    }
+    console.log(JSON.stringify(quizSeed))
+    // quizAPI.saveQuiz({ quizSeed }
+    // )
+    //   .then(res => this.loadQuiz())
+    //   .catch(err => console.log(err));
 
-  // handleFormSubmit = event => {
-  //   event.preventDefault();
-  //   quizAPI.saveQuiz({ quizSeed }
-  //   )
-  //     .then(res => this.loadQuiz())
-  //     .catch(err => console.log(err));
 
-
-  // };
+  };
 
 
   render() {
+    
     return (
 
       <div>
@@ -164,13 +175,14 @@ class newQuiz extends Component {
             name="answerq1a1"
             placeholder="Answer 1"
           />
-          <FormGroup>
-            <Label for="correctAnswer" className="labelMe">Is this the Correct Answer?</Label>
-            <Input type="select" name="correctq1a1" onChange={this.handleInputChange} value={this.state.correctq1a1}>
-              <option>true</option>
-              <option>false</option>
-            </Input>
-          </FormGroup>
+          
+          <Label for="correctAnswer" className="labelMe">Is this the Correct Answer?</Label>
+          <Select 
+          name="correctq1a1"     
+          options={options} 
+          placeholder="Yes or No"
+          onChange= {value => this.setState({correctq1a1:value})}       
+          />
 
 
           <Input
@@ -179,14 +191,13 @@ class newQuiz extends Component {
             name="answerq1a2"
             placeholder="Answer 2 "
           />
-          <FormGroup>
-            <Label for="correctAnswer" className="labelMe">Is this the Correct Answer?</Label>
-            <Input type="select" name="correctq1a2" onChange={this.handleInputChange}>
-              <option>true</option>
-              <option>false</option>
-            </Input>
-          </FormGroup>
 
+          <Label for="correctAnswer" className="labelMe">Is this the Correct Answer?</Label>
+          <Select 
+          name="correctq1a2"     
+          options={options} 
+          placeholder="Yes or No" onChange= {value => this.setState({correctq1a2:value})}          
+          />
 
           <Input
             value={this.state.answerq1a3}
@@ -194,13 +205,14 @@ class newQuiz extends Component {
             name="answerq1a3"
             placeholder="Answer 3"
           />
-          <FormGroup>
-            <Label for="correctAnswer" className="labelMe">Is this the Correct Answer?</Label>
-            <Input type="select" name="correctq1a3" onChange={this.handleInputChange}>
-              <option>true</option>
-              <option>false</option>
-            </Input>
-          </FormGroup>
+
+          <Label for="correctAnswer" className="labelMe">Is this the Correct Answer?</Label>
+          <Select 
+          name="correctq1a3"     
+          options={options} 
+          placeholder="Yes or No" onChange= {value => this.setState({correctq1a3:value})}          
+          />
+
 
           <Input
             value={this.state.answerq1a4}
@@ -208,18 +220,19 @@ class newQuiz extends Component {
             name="answerq1a4"
             placeholder="Answer 4"
           />
-          <FormGroup>
-            <Label for="correctAnswer" className="labelMe">Is this the Correct Answer?</Label>
-            <Input type="select" name="correctq1a4" onChange={this.handleInputChange}>
-              <option>true</option>
-              <option>false</option>
-            </Input>
-          </FormGroup>
+
+          <Label for="correctAnswer" className="labelMe">Is this the Correct Answer?</Label>
+          <Select 
+          name="correctq1a4"     
+          options={options} 
+          placeholder="Yes or No" onChange= {value => this.setState({correctq1a4:value})}          
+          />
+
 
           <Input
             value={this.state.question2}
             onChange={this.handleInputChange}
-            name="question1"
+            name="question2"
             placeholder="question 2"
           />
 
@@ -230,14 +243,13 @@ class newQuiz extends Component {
             name="answerq2a1"
             placeholder="Answer 1"
           />
-          <FormGroup>
-            <Label for="correctAnswer" className="labelMe">Is this the Correct Answer?</Label>
-            <Input type="select" name="correctq1a1" onChange={this.handleInputChange}>
-              <option>true</option>
-              <option>false</option>
-            </Input>
-          </FormGroup>
 
+          <Label for="correctAnswer" className="labelMe">Is this the Correct Answer?</Label>
+          <Select 
+          name="correctq2a1"     
+          options={options} 
+          placeholder="Yes or No" onChange= {value => this.setState({correctq2a1:value})}          
+          />
 
           <Input
             value={this.state.answerq2a2}
@@ -245,14 +257,13 @@ class newQuiz extends Component {
             name="answerq2a2"
             placeholder="Answer 2 "
           />
-          <FormGroup>
-            <Label for="correctAnswer" className="labelMe">Is this the Correct Answer?</Label>
-            <Input type="select" name="correctq1a2" onChange={this.handleInputChange}>
-              <option>true</option>
-              <option>false</option>
-            </Input>
-          </FormGroup>
 
+          <Label for="correctAnswer" className="labelMe">Is this the Correct Answer?</Label>
+          <Select 
+          name="correctq2a2"     
+          options={options} 
+          placeholder="Yes or No" onChange= {value => this.setState({correctq2a2:value})}          
+          />
 
           <Input
             value={this.state.answerq2a3}
@@ -260,13 +271,13 @@ class newQuiz extends Component {
             name="answerq2a3"
             placeholder="Answer 3"
           />
-          <FormGroup>
-            <Label for="correctAnswer" className="labelMe">Is this the Correct Answer?</Label>
-            <Input type="select" name="correctq1a3" onChange={this.handleInputChange}>
-              <option>true</option>
-              <option>false</option>
-            </Input>
-          </FormGroup>
+
+          <Label for="correctAnswer" className="labelMe">Is this the Correct Answer?</Label>
+          <Select 
+          name="correctq2a3"     
+          options={options} 
+          placeholder="Yes or No" onChange= {value => this.setState({correctq2a3:value})}          
+          />
 
           <Input
             value={this.state.answerq2a4}
@@ -274,79 +285,77 @@ class newQuiz extends Component {
             name="answerq2a4"
             placeholder="Answer 4"
           />
-          <FormGroup>
-            <Label for="correctAnswer" className="labelMe">Is this the Correct Answer?</Label>
-            <Input type="select" name="correctq1a4" onChange={this.handleInputChange}>
-              <option>true</option>
-              <option>false</option>
-            </Input>
-          </FormGroup>
+
+          <Label for="correctAnswer" className="labelMe">Is this the Correct Answer?</Label>
+          <Select 
+          name="correctq2a4"     
+          options={options} 
+          placeholder="Yes or No" onChange= {value => this.setState({correctq2a4:value})}          
+          />
 
           <Input
-            value={this.state.question1}
+            value={this.state.question3}
             onChange={this.handleInputChange}
-            name="question13"
+            name="question3"
             placeholder="question 3"
           />
 
 
           <Input
-            value={this.state.answerq1a1}
+            value={this.state.answerq3a1}
             onChange={this.handleInputChange}
             name="answerq3a1"
             placeholder="Answer 1"
           />
-          <FormGroup>
-            <Label for="correctAnswer" className="labelMe">Is this the Correct Answer?</Label>
-            <Input type="select" name="correctq3a1" onChange={this.handleInputChange}>
-              <option>true</option>
-              <option>false</option>
-            </Input>
-          </FormGroup>
 
+          <Label for="correctAnswer" className="labelMe">Is this the Correct Answer?</Label>
+          <Select 
+          name="correctq3a1"     
+          options={options} 
+          placeholder="Yes or No" onChange= {value => this.setState({correctq3a1:value})}          
+          />
 
           <Input
-            value={this.state.answerq1a2}
+            value={this.state.answerq3a2}
             onChange={this.handleInputChange}
             name="answerq3a2"
             placeholder="Answer 2 "
           />
-          <FormGroup>
-            <Label for="correctAnswer" className="labelMe">Is this the Correct Answer?</Label>
-            <Input type="select" name="correctq3a2" onChange={this.handleInputChange}>
-              <option>true</option>
-              <option>false</option>
-            </Input>
-          </FormGroup>
 
+          <Label for="correctAnswer" className="labelMe">Is this the Correct Answer?</Label>
+          <Select 
+          name="correctq3a2"     
+          options={options} 
+          placeholder="Yes or No" onChange= {value => this.setState({correctq3a2:value})}          
+          />
 
           <Input
-            value={this.state.answerq1a3}
+            value={this.state.answerq3a3}
             onChange={this.handleInputChange}
             name="answerq3a3"
             placeholder="Answer 3"
           />
-          <FormGroup>
-            <Label for="correctAnswer" className="labelMe">Is this the Correct Answer?</Label>
-            <Input type="select" name="correctq3a3" onChange={this.handleInputChange}>
-              <option>true</option>
-              <option>false</option>
-            </Input>
-          </FormGroup>
+
+          <Label for="correctAnswer" className="labelMe">Is this the Correct Answer?</Label>
+          <Select 
+          name="correctq3a3"     
+          options={options} 
+          placeholder="Yes or No" onChange= {value => this.setState({correctq3a3:value})}          
+          />
 
           <Input
-            value={this.state.answerq1a4}
+            value={this.state.answerq3a4}
             onChange={this.handleInputChange}
             name="answerq3a4"
             placeholder="Answer 4"
           />
-          <FormGroup>
-            <Label for="correctAnswer" className="labelMe">Is this the Correct Answer?</Label>
-            <Input type="select" name="correctq3a4" onChange={this.handleInputChange}>
-              <option>true</option>
-              <option>false</option>
-            </Input>
-          </FormGroup>
+
+          <Label for="correctAnswer" className="labelMe">Is this the Correct Answer?</Label>
+          <Select 
+          name="correctq3a4"     
+          options={options} 
+          placeholder="Yes or No" onChange= {value => this.setState({correctq3a4:value})}          
+          />
 
           <Button
 
