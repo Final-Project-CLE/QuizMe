@@ -25,6 +25,7 @@ class App extends Component {
       
       <div className="background">
         {auth.isAuthenticated ? <NavExample auth={auth} /> : null}
+        {/* if truthy on left of ? show what is betwen ? and : if falsey than show what is on the right of the : */}
         <Router history={history}>
           <div>
             <Route exact path="/" render={(props) => <Home auth={auth} {...props} />} />
@@ -38,8 +39,8 @@ class App extends Component {
             }}/>
           </div>
         </Router>
-      </div>
-      
+      </div> 
+
         );
       }
     }

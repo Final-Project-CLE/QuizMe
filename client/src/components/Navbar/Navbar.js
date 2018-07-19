@@ -39,26 +39,27 @@ class NavExample extends React.Component {
         <Navbar color="faded" light>
 
           {
-            !isAuthenticated() && (
-              <Button
-                id="qsLoginBtn"
-                bsstyle="primary"
-                className="btn-margin"
-                onClick={this.login.bind(this)}
-              >
-                Log In
+              !isAuthenticated() && (
+                <Button
+                  id="qsLoginBtn"
+                  bsstyle="primary"
+                  className="btn-margin"
+                  onClick={this.login.bind(this)}
+                >
+                  Log In
                   </Button>
-            )
-          }
-          {
-            isAuthenticated() && (
-              <Button
-                id="qsLogoutBtn"
-                bsstyle="primary"
-                className="btn-margin"
-                onClick={this.logout.bind(this)}
-              >
-                Log Out
+              )
+            }
+            {
+              isAuthenticated() && (
+                <Button
+                  id="qsLogoutBtn"
+                  bsstyle="primary"
+                  className="btn-margin"
+                  onClick={this.logout.bind(this)}
+                >
+                  Log Out
+
                   </Button>
 
             )
